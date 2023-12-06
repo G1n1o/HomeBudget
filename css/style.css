@@ -16,6 +16,10 @@ a {
   color: white;
 }
 
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
 .nav {
   position: fixed;
   display: flex;
@@ -172,7 +176,12 @@ a {
   color: rgba(221, 221, 221, 0.8666666667);
   font-size: 1.2rem;
 }
-.form .btn {
+.form .buttons {
+  display: flex;
+  justify-content: space-around;
+}
+
+.btn {
   padding: 0.7em 2em;
   color: white;
   border-radius: 23px;
@@ -180,12 +189,9 @@ a {
   border: none;
   cursor: pointer;
 }
-.form .blue-btn {
+
+.blue-btn {
   background-color: #301e67;
-}
-.form .buttons {
-  display: flex;
-  justify-content: space-around;
 }
 
 header {
@@ -197,6 +203,51 @@ header {
 }
 header i {
   margin: 0 0.5rem;
+}
+
+.wrapper {
+  width: 50%;
+  background-image: linear-gradient(#3f4859, #333d46);
+  color: #fff;
+  text-align: center;
+  border: 1px solid #1c232d;
+  border-radius: 15px;
+  box-shadow: 0 0 15px #1c232d;
+  z-index: 1;
+}
+.wrapper .top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10vh;
+  color: #fff;
+  background-color: #03001c;
+  text-transform: uppercase;
+  font-size: 2rem;
+}
+.wrapper .bottom {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 1rem;
+}
+.wrapper .bottom label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 1.8rem;
+}
+.wrapper .bottom input,
+.wrapper .bottom select {
+  margin-bottom: 2rem;
+  padding: 0.5rem 0.7rem;
+  width: 70%;
+  border-radius: 5px;
+  border: 1px solid rgb(185, 185, 185);
+  font-size: 1.4rem;
+}
+.wrapper .bottom .buttons {
+  font-size: 1.5rem;
 }
 
 @media (max-width: 992px) {
@@ -245,6 +296,19 @@ header i {
     font-size: 3rem;
     margin-bottom: 1rem;
   }
+  .wrapper .top {
+    font-size: 1.4rem;
+  }
+  .wrapper .bottom label {
+    font-size: 1rem;
+  }
+  .wrapper .bottom input,
+  .wrapper .bottom select {
+    font-size: 0.9rem;
+  }
+  .wrapper .bottom .buttons {
+    font-size: 1.2rem;
+  }
 }
 @media (max-width: 576px) {
   .nav-logo {
@@ -274,5 +338,25 @@ header i {
   .hero-main-text h1 {
     font-size: 3rem;
     margin-bottom: 1rem;
+  }
+  .wrapper .top {
+    height: 7vh;
+    font-size: 1rem;
+  }
+  .wrapper .bottom {
+    padding: 1rem 0.5rem;
+  }
+  .wrapper .bottom label {
+    margin-bottom: 0.5rem;
+    font-size: 0.8rem;
+  }
+  .wrapper .bottom input,
+  .wrapper .bottom select {
+    margin-bottom: 1rem;
+    padding: 0.5rem 0.7rem;
+    font-size: 0.7rem;
+  }
+  .wrapper .bottom .buttons {
+    font-size: 1rem;
   }
 }/*# sourceMappingURL=style.css.map */
