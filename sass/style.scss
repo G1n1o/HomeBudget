@@ -13,13 +13,17 @@ a {
 	text-decoration: none;
 	color: white;
 }
+body{
+	font-family: 'Montserrat', sans-serif;
+}
 
 // nawigacja
 
-.navbar {
-	display: flex;
+.nav {
 	position: fixed;
+	display: flex;
 	align-items: center;
+	justify-content: space-between;
 
 	height: 10vh;
 	width: 100%;
@@ -44,13 +48,14 @@ a {
 
 		right: 0;
 		width: 30%;
-		.st0{
-			fill:#fff;
+		.st0 {
+			fill: #fff;
 		}
 		svg {
 			height: 5vh;
 		}
 	}
+
 	button {
 		padding: 1rem 0.5rem;
 		background-color: transparent;
@@ -65,6 +70,19 @@ a {
 		box-shadow: 2px 3px 0 0 rgba(255, 255, 255, 0.8), inset 11px 6px 10px rgba(0, 0, 0, 0.2);
 		font-size: 1.6rem;
 		color: #5b8fb9;
+	}
+	.one {
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+	}
+	.log-out {
+		width: 100%;
+	}
+
+	&-user {
+		color: #fff;
+		font-size: 2rem;
 	}
 }
 
@@ -106,78 +124,82 @@ a {
 			background-color: rgba(0, 0, 0, 0.8);
 			box-shadow: 0px 12px 24px 6px rgba(0, 0, 0, 0.3);
 			color: #fff;
-			
+
 			position: relative;
 			width: 50%;
 			height: 100%;
 			font-size: 1.6rem;
 
 			display: flex;
-				flex-direction: column;
-				justify-content: center;
-				align-items: center;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
 			h1 {
 				font-size: 4rem;
 				margin-bottom: 2rem;
 			}
 			.home-page {
 				padding: 5rem 2rem;
-				
 			}
 		}
 	}
 }
 
+// FORM
 
 .form {
 	width: 100%;
 	height: 100%;
 	padding: 2rem;
-}
 
-.input-icons {
-	background-color: rgba(128, 128, 128, 0.1);
-	padding: 8px 1em;
-	margin-bottom: 0.5em;
-	margin-right: 0.5em;
-	border-radius: 18px;
-	position: relative;
-	border: 2px solid transparent;
-}
+	.input-icons {
+		background-color: rgba(128, 128, 128, 0.1);
+		padding: 8px 1em;
+		margin-bottom: 0.5em;
+		margin-right: 0.5em;
+		border-radius: 18px;
+		position: relative;
+		border: 2px solid transparent;
+	}
 
-.input-icons:hover {
-	border: 2px solid #5b8fb9;
-}
+	.input-icons:hover {
+		border: 2px solid #5b8fb9;
+	}
 
-.icon-center {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	height: 1rem;
-}
+	.icon-center {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		height: 1rem;
+	}
 
-.name {
-	display: flex;
-}
+	.name {
+		display: flex;
+	}
 
-.id {
-	width: 100%;
-}
+	.id {
+		width: 100%;
+	}
 
-.input {
-	background-color: transparent;
-	border: none;
-	outline: none;
-	font-size: 1.6rem;
-	color: white;
-	width: 100%;
-	margin-right: 1em;
-}
-legend {
-	color: #dddd;
-	font-size: 1.2rem;
-  }
+	.input {
+		background-color: transparent;
+		border: none;
+		outline: none;
+		font-size: 1.6rem;
+		color: white;
+		width: 100%;
+		margin-right: 1em;
+	}
+	legend {
+		color: #dddd;
+		font-size: 1.2rem;
+	}
 
+	.buttons {
+		display: flex;
+		justify-content: space-around;
+	}
+}
 .btn {
 	padding: 0.7em 2em;
 	color: white;
@@ -186,19 +208,72 @@ legend {
 	border: none;
 	cursor: pointer;
 }
-
-
 .blue-btn {
 	background-color: #301e67;
 }
 
-.buttons {
-	display: flex;
-	justify-content: space-around;
+//HEADER
+
+header {
+	position: fixed;
+	width: 100%;
+	top: 10vh;
+	z-index: 1;
+	font-size: 1.4rem;
+	i {
+		margin: 0 0.5rem;
+	}
+}
+
+//Expenses
+
+.wrapper {
+	width: 50%;
+	background-image: linear-gradient(#3f4859, #333d46);
+	color: #fff;
+	text-align: center;
+	border: 1px solid #1c232d;
+	border-radius: 15px;
+	box-shadow: 0 0 15px #1c232d;
+	z-index: 1;
+	.top {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 10vh;
+		color: #fff;
+		background-color: #03001c;
+		text-transform: uppercase;
+		font-size: 2rem;
+	}
+	.bottom {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		padding: 2rem 1rem;
+		label {
+			display: block;
+			margin-bottom: 0.5rem;
+			font-size: 1.8rem;
+		}
+		input,
+		select {
+			margin-bottom: 2rem;
+			padding: 0.5rem 0.7rem;
+			width: 70%;
+			border-radius: 5px;
+			border: 1px solid rgb(185, 185, 185);
+			font-size: 1.4rem;
+		}
+		.buttons {
+			font-size: 1.5rem;
+		}
+	}
 }
 
 @media (max-width: 992px) {
-	.navbar {
+	.nav {
 		&-logo {
 			font-size: 2.5rem;
 		}
@@ -208,6 +283,9 @@ legend {
 		}
 		button:hover {
 			font-size: 1.4rem;
+		}
+		&-user {
+			font-size: 1.5rem;
 		}
 	}
 	.hero {
@@ -223,7 +301,7 @@ legend {
 	}
 }
 @media (max-width: 776px) {
-	.navbar {
+	.nav {
 		&-logo {
 			font-size: 2.5rem;
 		}
@@ -235,6 +313,9 @@ legend {
 			}
 		}
 		button:hover {
+			font-size: 1.4rem;
+		}
+		&-user {
 			font-size: 1.4rem;
 		}
 	}
@@ -249,10 +330,29 @@ legend {
 			}
 		}
 	}
+	.wrapper {
+		
+		.top {		
+			font-size: 1.4rem;
+		}
+		.bottom {
+			
+			label {			
+				font-size: 1rem;
+			}
+			input,
+			select {
+				font-size: .9rem;
+			}
+			.buttons {
+				font-size: 1.2rem;
+			}
+		}
+	}
 }
 
 @media (max-width: 576px) {
-	.navbar {
+	.nav {
 		&-logo {
 			font-size: 1.2rem;
 		}
@@ -262,6 +362,9 @@ legend {
 		}
 		button:hover {
 			font-size: 0.9rem;
+		}
+		&-user {
+			font-size: 0.8rem;
 		}
 	}
 	.hero {
@@ -281,4 +384,28 @@ legend {
 			}
 		}
 	}
+	.wrapper {
+		
+		.top {		
+			height: 7vh;
+			font-size: 1rem;
+		}
+		.bottom {
+			padding: 1rem 0.5rem;
+			label {
+				margin-bottom: 0.5rem;
+				font-size: 0.8rem;
+			}
+			input,
+			select {
+				margin-bottom: 1rem;
+				padding: 0.5rem 0.7rem;
+				font-size: .7rem;
+			}
+			.buttons {
+				font-size: 1rem;
+			}
+		}
+	}
+	
 }
