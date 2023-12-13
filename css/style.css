@@ -198,15 +198,21 @@ header {
   position: fixed;
   width: 100%;
   top: 10vh;
-  z-index: 1;
+  z-index: 100;
   font-size: 1.4rem;
 }
 header i {
   margin: 0 0.5rem;
 }
+header .empty {
+  color: #212529;
+  width: 15rem;
+  cursor: default;
+}
 
 .wrapper {
   width: 50%;
+  margin: 0 0.5rem;
   background-image: linear-gradient(#3f4859, #333d46);
   color: #fff;
   text-align: center;
@@ -219,7 +225,7 @@ header i {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 10vh;
+  height: 8vh;
   color: #fff;
   background-color: #03001c;
   text-transform: uppercase;
@@ -230,16 +236,15 @@ header i {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 2rem 1rem;
+  padding: 0.5rem;
 }
 .wrapper .bottom label {
   display: block;
-  margin-bottom: 0.5rem;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
 }
 .wrapper .bottom input,
 .wrapper .bottom select {
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
   padding: 0.5rem 0.7rem;
   width: 70%;
   border-radius: 5px;
@@ -248,6 +253,129 @@ header i {
 }
 .wrapper .bottom .buttons {
   font-size: 1.5rem;
+}
+
+.balance {
+  position: relative;
+  top: 15vh;
+  height: 87vh;
+  flex-direction: column;
+  height: 90%;
+  justify-content: start;
+}
+.balance h1 {
+  color: white;
+}
+.balance p {
+  font-size: 1.2rem;
+}
+.balance .tab {
+  display: flex;
+  width: 110%;
+  height: 40vh;
+  margin: 0.4rem;
+}
+.balance .tab .wrapper {
+  overflow: hidden;
+}
+.balance .tab .wrapper .bottom {
+  position: relative;
+  display: block;
+  height: 80%;
+  overflow-y: auto;
+}
+.balance .tab .wrapper .bottom::-webkit-scrollbar {
+  width: 1rem;
+}
+.balance .tab .wrapper .bottom::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+.balance ul {
+  list-style: none;
+  width: 100%;
+  padding: 0;
+}
+.balance ul button {
+  padding: 3px;
+  background-color: transparent;
+  border: none;
+  color: #fff;
+}
+.balance ul p {
+  display: inline-block;
+  width: 20%;
+}
+.balance ul .buttons {
+  width: 15%;
+}
+
+.piechart {
+  color: #fff;
+}
+.piechart-main {
+  flex-direction: column;
+  justify-content: start;
+  width: 60%;
+  height: 60%;
+  background-color: rgba(0, 0, 0, 0.8);
+  text-align: left;
+  z-index: 10;
+}
+.piechart-main h2 {
+  text-align: center;
+  font-size: 4rem;
+  margin: 4rem 2rem;
+}
+.piechart .chart {
+  width: 70%;
+  height: 60%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.piechart .chart .legend {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: start;
+  font-size: 2.5rem;
+  width: 50%;
+  height: 100%;
+}
+.piechart .chart .legend .expenses-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.piechart .chart .legend .expenses-item p {
+  margin: 0;
+}
+.piechart .chart .legend .expenses-item .circle {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  margin-right: 2rem;
+}
+.piechart .chart .legend .expenses-item .first {
+  background-color: #ff3333;
+}
+.piechart .chart .legend .expenses-item .second {
+  background-color: #33ff33;
+}
+.piechart .chart .legend .expenses-item .third {
+  background-color: #3333ff;
+}
+.piechart .chart .legend .expenses-item .fourth {
+  background-color: #ffff33;
+}
+.piechart .chart .legend .expenses-item .fifth {
+  background-color: #ff33ff;
+}
+.piechart .pie-chart {
+  width: 45%;
+  height: 100%;
+  border-radius: 50%;
+  background: conic-gradient(#ff3333 0% 40%, #33ff33 40% 60%, #3333ff 60% 80%, #ffff33 80% 90%, #ff33ff 90% 100%);
 }
 
 @media (max-width: 992px) {
@@ -270,6 +398,24 @@ header i {
   .hero-main-text h1 {
     font-size: 4rem;
     margin-bottom: 1.5rem;
+  }
+  .wrapper {
+    width: 60%;
+  }
+  .balance p {
+    font-size: 1rem;
+  }
+  .piechart-main h2 {
+    font-size: 3rem;
+  }
+  .piechart .chart .legend {
+    font-size: 1.6rem;
+    margin: 2rem 0;
+  }
+  .piechart .chart .legend .expenses-item .circle {
+    width: 2rem;
+    height: 2rem;
+    margin-right: 1rem;
   }
 }
 @media (max-width: 776px) {
@@ -296,6 +442,9 @@ header i {
     font-size: 3rem;
     margin-bottom: 1rem;
   }
+  .wrapper {
+    width: 70%;
+  }
   .wrapper .top {
     font-size: 1.4rem;
   }
@@ -308,6 +457,50 @@ header i {
   }
   .wrapper .bottom .buttons {
     font-size: 1.2rem;
+  }
+  .balance .wrapper {
+    width: 100%;
+  }
+  .balance .tab {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 0.4rem 0;
+  }
+  .balance .tab .wrapper {
+    height: 80vh;
+    margin: 0;
+  }
+  .piechart-main {
+    flex-direction: column;
+    justify-content: start;
+  }
+  .piechart-main h2 {
+    font-size: 2.5rem;
+    margin: 3rem 2rem;
+  }
+  .piechart .chart {
+    width: 70%;
+    height: 60%;
+    flex-direction: column;
+  }
+  .piechart .chart .legend {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: stretch;
+    font-size: 1.2rem;
+    width: 100%;
+    height: 50%;
+    margin: 2rem 0;
+  }
+  .piechart .chart .legend .expenses-item .circle {
+    width: 2rem;
+    height: 2rem;
+    margin-right: 1rem;
+  }
+  .piechart .pie-chart {
+    width: 80%;
+    height: 100%;
   }
 }
 @media (max-width: 576px) {
@@ -339,15 +532,17 @@ header i {
     font-size: 3rem;
     margin-bottom: 1rem;
   }
+  .wrapper {
+    width: 80%;
+  }
   .wrapper .top {
     height: 7vh;
     font-size: 1rem;
   }
   .wrapper .bottom {
-    padding: 1rem 0.5rem;
+    padding: 0.5rem;
   }
   .wrapper .bottom label {
-    margin-bottom: 0.5rem;
     font-size: 0.8rem;
   }
   .wrapper .bottom input,
@@ -358,5 +553,8 @@ header i {
   }
   .wrapper .bottom .buttons {
     font-size: 1rem;
+  }
+  .balance p {
+    font-size: 0.8rem;
   }
 }/*# sourceMappingURL=style.css.map */
