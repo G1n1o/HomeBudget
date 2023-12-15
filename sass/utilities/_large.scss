@@ -1,0 +1,61 @@
+@media (max-width: 992px) {
+	.nav {
+		&-logo {
+			font-size: 2.5rem;
+		}
+		&-buttons {
+			font-size: 1.5rem;
+			width: 35%;
+		}
+		button:hover {
+			font-size: 1.4rem;
+		}
+		&-user {
+			font-size: 1.5rem;
+		}
+	}
+	.hero {
+		&-main {
+			&-text {
+				font-size: 1.4rem;
+				h1 {
+					font-size: 4rem;
+					margin-bottom: 1.5rem;
+				}
+			}
+		}
+	}
+	.wrapper {
+		width: 60%;
+	}
+	.balance {
+		p {
+			font-size: 1rem;
+		}
+	}
+	.piechart {
+		&-main {
+			h2 {
+				font-size: 3rem;
+			}
+		}
+		.chart {
+		
+			.legend {
+				font-size: 1.6rem;
+				margin: 2rem 0;
+				.expenses-item {
+
+					.circle {
+						width: 2rem;
+						height: 2rem;
+						margin-right: 1rem;
+					}
+				}
+			}
+		}
+	}
+}
+
+
+

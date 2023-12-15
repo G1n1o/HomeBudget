@@ -1,5 +1,4 @@
-@import 'animation';
-
+@use './utilities' as *;
 
 *,
 *::after,
@@ -18,6 +17,7 @@ a {
 }
 body {
 	font-family: 'Montserrat', sans-serif;
+	min-width: 320px;
 }
 
 // nawigacja
@@ -30,8 +30,8 @@ body {
 
 	height: 10vh;
 	width: 100%;
-	//min-width: 320px;
-	background-color: #03001c;
+	
+	background-color: $darkblue-color;
 	z-index: 10;
 
 	&-logo {
@@ -43,7 +43,7 @@ body {
 		}
 	}
 	span {
-		color: #5b8fb9;
+		color: $lightblue-color;
 	}
 	&-buttons {
 		position: relative;
@@ -70,9 +70,9 @@ body {
 		cursor: pointer;
 	}
 	button:hover {
-		box-shadow: 2px 3px 0 0 rgba(255, 255, 255, 0.8), inset 11px 6px 10px rgba(0, 0, 0, 0.2);
+		box-shadow: 2px 3px 0 0 rgba(255, 255, 255, 0.8), inset 11px 6px 10px $shadow;
 		font-size: 1.6rem;
-		color: #5b8fb9;
+		color: $lightblue-color;
 	}
 	.one {
 		display: flex;
@@ -107,7 +107,7 @@ body {
 		position: absolute;
 		width: 100%;
 		height: 100%;
-		background-color: rgba(0, 0, 0, 0.2);
+		background-color: $shadow;
 	}
 	&-main {
 		display: flex;
@@ -118,14 +118,14 @@ body {
 		text-align: center;
 
 		span {
-			color: #5b8fb9;
+			color: $lightblue-color;
 		}
 		img {
 			height: 100%;
 			width: 50%;
 		}
 		&-text {
-			background-color: rgba(0, 0, 0, 0.8);
+			background-color: $dark;
 			box-shadow: 0px 12px 24px 6px rgba(0, 0, 0, 0.3);
 			color: #fff;
 
@@ -167,7 +167,7 @@ body {
 	}
 
 	.input-icons:hover {
-		border: 2px solid #5b8fb9;
+		border: 2px solid $lightblue-color;
 	}
 
 	.icon-center {
@@ -213,15 +213,7 @@ body {
 	cursor: pointer;
 }
 .blue-btn {
-	background-color: #301e67;
-}
-.bi-chevron-down {
-	position: absolute;
-	left: 50%;
-	transform: translateX(-50%);
-	bottom: 20px;
-	font-size: 30px;
-	color: black;
+	background-color: $blue-color;
 }
 
 //HEADER
@@ -265,7 +257,7 @@ header {
 		align-items: center;
 		height: 8vh;
 		color: #fff;
-		background-color: #03001c;
+		background-color: $darkblue-color;
 		text-transform: uppercase;
 		font-size: 2rem;
 	}
@@ -328,7 +320,7 @@ header {
 				width: 1rem;
 			}
 			.bottom::-webkit-scrollbar-thumb {
-				background-color: rgba(0, 0, 0, 0.2);
+				background-color: $shadow;
 			}
 		}
 	}
@@ -351,6 +343,15 @@ header {
 		}
 	}
 }
+.bi-chevron-down {
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	bottom: 20px;
+	font-size: 30px;
+	color: $dark;
+}
+
 .piechart {
 	color: #fff;
 
@@ -359,7 +360,7 @@ header {
 		justify-content: start;
 		width: 60%;
 		height: 60%;
-		background-color: #000000cc;
+		background-color: $dark;
 		text-align: left;
 		z-index: 10;
 		h2 {
@@ -398,19 +399,19 @@ header {
 					margin-right: 2rem;
 				}
 				.first {
-					background-color: #ff3333;
+					background-color: $pie-first;
 				}
 				.second {
-					background-color: #33ff33;
+					background-color: $pie-second;
 				}
 				.third {
-					background-color: #3333ff;
+					background-color: $pie-third;
 				}
 				.fourth {
-					background-color: #ffff33;
+					background-color: $pie-fourth;
 				}
 				.fifth {
-					background-color: #ff33ff;
+					background-color:$pie-fifth;
 				}
 			}
 		}
@@ -420,236 +421,11 @@ header {
 		width: 45%;
 		height: 100%;
 		border-radius: 50%;
-		background: conic-gradient(#ff3333 0% 40%, #33ff33 40% 60%, #3333ff 60% 80%, #ffff33 80% 90%, #ff33ff 90% 100%);
+		background: conic-gradient($pie-first 0% 40%, $pie-second 40% 60%, $pie-third 60% 80%, $pie-fourth 80% 90%, $pie-fifth 90% 100%);
 	}
 }
 
-@media (max-width: 992px) {
-	.nav {
-		&-logo {
-			font-size: 2.5rem;
-		}
-		&-buttons {
-			font-size: 1.5rem;
-			width: 35%;
-		}
-		button:hover {
-			font-size: 1.4rem;
-		}
-		&-user {
-			font-size: 1.5rem;
-		}
-	}
-	.hero {
-		&-main {
-			&-text {
-				font-size: 1.4rem;
-				h1 {
-					font-size: 4rem;
-					margin-bottom: 1.5rem;
-				}
-			}
-		}
-	}
-	.wrapper {
-		width: 60%;
-	}
-	.balance {
-		p {
-			font-size: 1rem;
-		}
-	}
-	.piechart {
-		&-main {
-			h2 {
-				font-size: 3rem;
-			}
-		}
-		.chart {
-		
-			.legend {
-				font-size: 1.6rem;
-				margin: 2rem 0;
-				.expenses-item {
+@import './utilities/small';
+@import './utilities/medium';
+@import './utilities/large';
 
-					.circle {
-						width: 2rem;
-						height: 2rem;
-						margin-right: 1rem;
-					}
-				}
-			}
-		}
-	}
-}
-
-@media (max-width: 776px) {
-	.nav {
-		&-logo {
-			font-size: 2.5rem;
-		}
-		&-buttons {
-			font-size: 1.5rem;
-			width: 40%;
-			svg {
-				height: 3vh;
-			}
-		}
-		button:hover {
-			font-size: 1.4rem;
-		}
-		&-user {
-			font-size: 1.4rem;
-		}
-	}
-	.hero {
-		&-main {
-			&-text {
-				font-size: 1.2rem;
-				h1 {
-					font-size: 3rem;
-					margin-bottom: 1rem;
-				}
-			}
-		}
-	}
-	.wrapper {
-		width: 70%;
-		.top {
-			font-size: 1.4rem;
-		}
-		.bottom {
-			label {
-				font-size: 1rem;
-			}
-			input,
-			select {
-				font-size: 0.9rem;
-			}
-			.buttons {
-				font-size: 1.2rem;
-			}
-		}
-	}
-	.modal-body {
-		display:flex ;
-		flex-direction: column;
-	}
-
-	.balance {
-		.wrapper {
-			width: 100%;
-		}
-
-		.tab {
-			display: flex;
-			flex-direction: column;
-			width: 100%;
-			margin: 0.4rem 0;
-			.wrapper {
-				height: 80vh;
-				margin: 0;
-			}
-		}
-	}
-	.piechart {
-		&-main {
-			flex-direction: column;
-			justify-content: start;
-			h2 {
-				font-size: 2.5rem;
-				margin: 3rem 2rem;
-			}
-		}
-		.chart {
-			width: 70%;
-			height: 60%;
-			flex-direction: column;
-
-			.legend {
-				flex-direction: row;
-				flex-wrap: wrap;
-				align-content: stretch;
-				font-size: 1.2rem;
-				width: 100%;
-				height: 50%;
-				margin: 2rem 0;
-				.expenses-item {
-					.circle {
-						width: 2rem;
-						height: 2rem;
-						margin-right: 1rem;
-					}
-				}
-			}
-		}
-
-		.pie-chart {
-			width: 80%;
-			height: 100%;
-		}
-	}
-}
-
-@media (max-width: 576px) {
-	.nav {
-		&-logo {
-			font-size: 1.2rem;
-		}
-		&-buttons {
-			font-size: 1rem;
-			width: 47%;
-		}
-		button:hover {
-			font-size: 0.9rem;
-		}
-		&-user {
-			font-size: 0.8rem;
-		}
-	}
-	.hero {
-		&-main {
-			flex-direction: column;
-			img {
-				width: 100%;
-				height: 65%;
-			}
-			&-text {
-				width: 100%;
-				font-size: 1rem;
-				h1 {
-					font-size: 3rem;
-					margin-bottom: 1rem;
-				}
-			}
-		}
-	}
-	.wrapper {
-		width: 80%;
-		.top {
-			height: 7vh;
-			font-size: 1rem;
-		}
-		.bottom {
-			padding: 0.5rem;
-			label {
-				font-size: 0.8rem;
-			}
-			input,
-			select {
-				margin-bottom: 1rem;
-				padding: 0.5rem 0.7rem;
-				font-size: 0.7rem;
-			}
-			.buttons {
-				font-size: 1rem;
-			}
-		}
-	}
-
-	.balance {
-		p {
-			font-size: 0.8rem;
-		}
-	}
-}
